@@ -62,7 +62,6 @@
                 -webkit-overflow-scrolling: touch;
             }
     </style>
-
     <style>
         html,
         body {
@@ -98,88 +97,27 @@
                 border-top-right-radius: 0;
             }
     </style>
-
 </head>
-<body class="text-center">
-    <main class="form-signin w-100 m-auto">
+<body class="">
+    <div class="container-xxl bg-white p-5 h-100">
         <div id="id01"></div>
-        <form id="foofoo">
-            <img class="mb-4" src="/images/bg.jpg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+        <div class="row">
+            <div class="col">
+                <h1>SayOkay365</h1>
             </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form id="foofoo">
+                    <button id-"Checkin-btn" class="w-100 btn btn-lg btn-primary" type="submit">Daily CheckIn</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+                </form>
             </div>
+        </div>
+        <div class="form-signin w-100 m-auto"></div>
+    </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button id-"Checkin-btn" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-        </form>
-    </main>
-    <script>
-            //var xmlhttp = new XMLHttpRequest();
-            //var url = "http://localhost:7197/api/FunctionApp1CheckIn";
-
-            //xmlhttp.onreadystatechange = function () {
-            //    if (this.readyState == 4 && this.status == 200) {
-            //        //var myArr = JSON.parse(this.responseText);
-            //        myFunction(this.responseText);
-            //    }
-            //};
-            //xmlhttp.open("GET", url, true);
-            //xmlhttp.send();
-
-            //function myFunction(responseText) {
-            //    document.getElementById("id01").innerHTML = responseText;
-            //}
-    </script>
-    <script>
-        let uuid = crypto.randomUUID();
-
-        console.log(uuid); // for example "ab6b7b51-1c1b-4346-bc7b-d1555187ac90"
-        //read: https://www.tomfaltesek.com/azure-function-contact-form-http-trigger/
-        var contactForm = document.getElementById("foofoo");
-        var successMessage = document.getElementById("id01");
-
-        contactForm.onsubmit = function (event) {
-            event.preventDefault(); // Don't let the browser submit the form.
-
-            // Build JSON key-value pairs using the form fields.
-            var payload = {};
-            payload["name"] = "hello dave";
-            //contactForm.querySelectorAll("input, textarea").forEach(field => {
-            //    payload[field.name] = field.value;
-            //});
-
-            makeRequest(payload);
-        }
-
-        async function makeRequest(payload) {
-            try {
-                const response = await fetch('http://localhost:7197/api/FunctionApp1CheckIn',
-                    {
-                        method: 'post',
-                        mode: "no-cors",
-                        body: JSON.stringify(payload)
-                    });
-
-                console.log('response.status: ', response.status); // 👉️ 200
-                console.log(response);
-
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    </script>
+    <script src="ScriptsSayOkay/site.js"></script>
 </body>
 
 </html>
